@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "max-bridge"
+version = "2.0.0"
+description = "Self-hosted multi-user bridge: MAX messenger → Telegram forum topics"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.9",
+    "aiogram>=3.7",
+    "aiosqlite>=0.20",
+    "cryptography>=43.0",
+    "posthog>=3.0",
+    "segno>=1.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-mock>=3.14",
+    "pytest-aiohttp>=1.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
